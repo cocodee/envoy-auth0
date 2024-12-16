@@ -1,0 +1,21 @@
+## The following entries are the variables  accepted by the Contour OIDC module.
+## server address and port 
+address: ":9001"
+
+## OIDC issuer URL 
+issuerURL: "https://dev-hxnc2a1syq5t4v3i.us.auth0.com/"
+
+## App redirect path ( usually point back to app url)
+redirectURL: "https://localhost:8000"
+redirectPath: "/callback"
+allowEmptyClientSecret: false
+scopes:
+- openid
+- profile
+- email
+- offline_access
+usernameClaim: "nickname"
+emailClaim: ""
+serveTLS: false
+clientID: ""
+clientSecret: ""

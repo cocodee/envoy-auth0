@@ -1,0 +1,10 @@
+export SERVER=192.168.3.71:7890
+export HTTP_PROXY=http://$SERVER
+export HTTPS_PROXY=http://$SERVER
+export http_proxy=http://$SERVER
+export https_proxy=http://$SERVER
+docker build --build-arg HTTP_PROXY=$HTTP_PROXY \
+             --build-arg HTTPS_PROXY=$HTTPS_PROXY \
+             --build-arg http_proxy=$http_proxy \
+             --build-arg https_proxy=$https_proxy \
+             --target envoy-ext_authz --build-arg ENVOY_CONFIG=config/v3.yaml -t envoy-ext_authz -f envoy/Dockerfile .
